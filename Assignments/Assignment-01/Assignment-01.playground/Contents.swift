@@ -90,7 +90,7 @@ if (x1,y1) <= (lowX,lowY) || (x1,y1) >= (highX,highY) {
 }else{
     print("inside")
 }
-
+print("------------------------------")
 
 //**************** END OF QUESTION 3 ****************
 
@@ -107,6 +107,8 @@ for x in 1 ... 5
     print("\(x)","\(N)",terminator:" ")
     N -= 1
 }
+print("")
+print("------------------------------")
 
 //4.b) If a number C is given, then print the following rhombus
 //declare C = 5
@@ -130,7 +132,11 @@ for x in 1 ... 5
 //**************** QUESTION 5 ****************
 // Using Strings
 //5.a) Replace the character "a" in original string with * and print the new String
+
 var original = "This String Contains a very few a's"
+var replacedOriginal = original.replacingOccurrences(of: "a", with: "*")
+print(replacedOriginal)
+print("------------------------------")
 
 //5.b) Declare 2 Strings str1 and str2 as "Hello, Swift!" and "Hello, World!" respectively and compare them
 // If the 2 Strings are equal, print str1 and str2 are equal, else str1 and str2 are not equal.
@@ -157,6 +163,15 @@ print("------------------------------")
  //declare var myString1 = "ababa"
  //expected output bab
 
+var myString1:String = "ababa"
+let myString1Prefix = myString1.index(myString1.startIndex, offsetBy: 1)
+let myString1Suffix = myString1.index(myString1.endIndex, offsetBy: -1)
+let finalmyString1 = myString1[myString1Prefix..<myString1Suffix]
+if myString1.hasPrefix("a") && myString1.hasSuffix("a") {
+    print(finalmyString1)
+}else{
+    print(myString1)
+}
 
 //**************** END OF QUESTION 5 ****************
 
