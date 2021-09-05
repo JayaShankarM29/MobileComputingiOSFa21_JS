@@ -5,6 +5,7 @@ When you open this file  in Xcode, it is normal that you see errors in the sourc
  */
 
 //**************** QUESTION 1 ****************
+
 // 1.a) Declare a variable called  distance of type Double, using type annotation
 
 var distance:Double
@@ -42,9 +43,11 @@ print("------------------------------")
 
 
 //**************** QUESTION 2 ****************
+
 // 2.a) Predict what will happen when you try and execute below three statements when you uncomment the third line?
 
 //Commenting out the  below code for 2.b solution, as the Xcode doesn't accept declaring same variables again and again
+
 //var x = 15
 //var y = 25.0
 //y = x
@@ -64,6 +67,7 @@ y = x
 
 
 //**************** QUESTION 3 ****************
+
 // 3 Consider a point (x1,y1), find whether the point is inside or outside the rectangle.
 /*
             ------------------------ (highX,highY)
@@ -97,10 +101,12 @@ print("------------------------------")
 
 
 //**************** QUESTION 4 ****************
+
 //using loops
 //4.a) Print the numbers 1 to N in alternative order, one number from the left side (starting with one) and one number from the right side (starting from N down to 1)
 //Decalare var N = 10
 //expected output is 1 10 2 9 3 8 4 7 5 6
+
 var N = 10
 for x in 1 ... 5
 {
@@ -123,24 +129,52 @@ print("------------------------------")
 //  *****
 //   ***
 //    *
-var C = 5
-for i in 0..<C {
-    var printChar = ""
-    for j in 0..<(C + 1) {
-        let s = C - i
-        if (j > s) {
-            printChar = printChar + "*"
-        }else{
-            printChar = printChar + " "
+
+let C = 5
+var printChar = ""
+
+for row in 1...C + C - 1 {
+    for col in 1...C + C - 1 {
+        if row == C {
+            printChar += "*"
+            
+        } else if row < C {
+            if col <= C - row {
+                printChar += " "
+                
+            } else if col >= C + row {
+                printChar += " "
+                
+            } else {
+                printChar += "*"
+                
+            }
+            
+        } else {
+            if col <= row - C {
+                printChar += " "
+                
+            } else if col >= C * 2 - (row - C) {
+                printChar += " "
+                
+            } else {
+                printChar += "*"
+                
+            }
+            
         }
+        if col == C + C - 1 {
+            printChar += "\n"
+            
+        }
+        
     }
-    for t in 0..<(i + 1) {
-        printChar = printChar + "*"
-    }
-    print(printChar)
+    
 }
 
+print(printChar)
 print("------------------------------")
+
 //**************** END OF QUESTION 4 ****************
 
 
@@ -158,6 +192,7 @@ print("------------------------------")
 // If the 2 Strings are equal, print str1 and str2 are equal, else str1 and str2 are not equal.
 
 //Implemented in a different way using Tuples
+
 var str1 = "Hello, Swift!"
 var str2 = "Hello, World!"
 if (str1,str2) == ("Hello, World!","Hello, Swift!") {
@@ -168,6 +203,7 @@ if (str1,str2) == ("Hello, World!","Hello, Swift!") {
 print("------------------------------")
    
 //5.c) Declare a String Swift and print them in the reverse order.
+
 var str = "Swift"
 for character in str.reversed() {
     print(character, terminator: "")
